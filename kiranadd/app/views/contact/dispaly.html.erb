@@ -1,0 +1,22 @@
+<a href="http://localhost:3000/contact/dispaly" onClick="javascript:window.print()">Print this page</a>
+
+
+<%#=params%>
+<table border>
+<tr><td>Home Address</td><td>Office Address</td><tr>
+<%params.each do |key,value| %>
+<%@aa=Member.find(value)%>
+<tr><td>
+<%=@aa.fname%>&nbsp;<%=@aa.lname%><br>
+<%=@aa.haddressl1%><br>
+<%=@aa.haddressl2%><br>
+<%=@aa.haddressl3%></td>
+<td>
+<%=@aa.fname%>&nbsp;<%=@aa.lname%><br>
+<%=@aa.oaddressl1%><br>
+<%=@aa.oaddressl2%><br>
+<%=@aa.oaddressl3%></td>
+
+</tr>
+<%end%>
+

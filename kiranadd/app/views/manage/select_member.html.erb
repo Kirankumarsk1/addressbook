@@ -1,0 +1,27 @@
+<%#=params%>
+
+<%if @x.empty? %>
+<i><h3>No members in the group</h3></i>
+<%#=@x.id%>
+<%=link_to 'click to add members',:controller=>"contact",:action=>"addmembertogroup"%>
+<%else%>
+
+<p><i>Members in <%=@n.gname%> group are </i></p>
+<table border="border" >
+<tr><td>First Name</td><td>Last Name</td><td>Home Address</td><td>Office Address</td></tr>
+
+<%@x.each do |f|%>
+<tr><td><%=f.fname%><br></td>
+<td><%=f.lname%><br></td>
+<td><%=f.haddressl1%><br>
+<%=f.haddressl2%><br>
+<%=f.haddressl3%><br>
+</td>
+<td><%=f.oaddressl1%><br>
+<%=f.oaddressl2%><br>
+<%=f.oaddressl3%><br>
+</td>
+</tr>
+<%end%>
+</table>
+<%end%>

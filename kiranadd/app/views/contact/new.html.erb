@@ -1,0 +1,41 @@
+
+<font color ="blue" font-family="Georgia"><center></font>
+<%=link_to "Show All Address",:controller =>"contact",:action =>"home"%>
+<h1>Adding New Address</h1>
+<%= form_for :member,:url => {:action =>"create"} do |f| %>
+<p>First Name<br/>    
+<%= f.text_field :fname %></p>
+<p>Last Name<br/>    
+<%= f.text_field :lname %></p>
+<p>Land Line Number<br/>      
+<%= f.text_field :lphone %></p>
+<p>Mobile Number<br/>      
+<%= f.text_field :mob %></p>
+<p>Email-Id<br/>      
+<%= f.text_field :email %></p>
+<p>Home Address Line 1<br/>    
+<%=f.text_field :haddressl1%></p> 
+<p>Home Address Line 2<br/>    
+<%= f.text_field :haddressl2%></p> 
+<p>Home Address Line 3<br/>    
+<%= f.text_field :haddressl3%></p>
+<p>Home City</br>
+<%= f.text_field :hcity%></p> 
+<p>Home City Pincode<br>
+<%=f.text_field :hpincode%></p>
+<p>Office Address Line 1<br/>    
+<%= f.text_field :oaddressl1%></p> 
+<p>Office Address Line 2<br/>    
+<%= f.text_field :oaddressl2%></p> 
+<p>Office Address Line 3<br/>    
+<%= f.text_field :oaddressl3%></p> 
+<p>Office City</br>
+<%= f.text_field :ocity%></p> 
+<p>Office City Pincode<br>
+<%=f.text_field :opincode%></p>
+
+<%= f.submit "SAVE" %>
+<%end%>
+
+</center>
+<%=link_to "BACK",:controller =>"contact",:action =>"home" %>

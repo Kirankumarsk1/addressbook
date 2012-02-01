@@ -1,0 +1,17 @@
+<h1>Add new Group</h1>
+<%=form_for :gp,:url=>{:controller=>"contact",:action=>"updategroup"} do |f|%>
+Group Name
+<%10.times do %>
+&nbsp;
+<%end%>
+<%=f.text_field :gname%><br>
+Group Description
+<%6.times do %>
+&nbsp;
+<%end%>
+<%=f.text_field :glabel%><br>
+<%20.times do %>
+&nbsp;
+<%end%>
+<%=f.submit "SAVE GROUP"%>
+<%end%>

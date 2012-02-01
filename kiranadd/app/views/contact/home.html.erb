@@ -1,0 +1,71 @@
+<html>
+<head>
+<script type="text/javascript">
+
+    
+   checked = false;
+      function checkedAll (frm1) {
+   var aa= document.getElementById('frm1');
+       if (checked == false)
+          {
+           checked = true
+          }
+        else
+          {
+          checked = false
+          }
+   for (var i =0; i < aa.elements.length; i++) 
+   {
+    aa.elements[i].checked = checked;
+   }
+      }
+
+
+
+</script>
+<body bgcolor="pink">
+<center><%=link_to "New Address", :controller=>"contact", :action=>"new"%>
+</center>
+<table border>
+<tr><th>SL Number</th> 
+<th>First Name</th> 
+<th>Last Name</th> 
+<th>Phone Number</th> 
+<th>E-Mail</th> 
+<th>Home City</th>
+<th>Home Address</th>
+<th>Office City</th>
+<th>Office Address</th><form action='dispaly' id='frm1' method='post'>
+<th colspan="2">Select All 
+<center><input type='checkbox' name='checkall' onclick='checkedAll();'></center> </th>
+
+</tr>
+
+<%@member.each do |m|%>
+<tr>
+<td><%=m.id%></td>
+<td><%=m.fname%></td>
+<td><%=m.lname%></td>
+<td><%=m.mob%></td>
+<td><%=m.email%></td>
+<td><%=m.hcity%></td>
+<td><%=m.haddressl1%><br>
+<%=m.haddressl2%>
+<%=m.haddressl3%></td>
+<td><%=m.ocity%></td>
+<td><%=m.oaddressl1%><br>
+<%=m.oaddressl2%>
+<%=m.oaddressl3%></td>
+<td><center><input type="checkbox" name="<%=m.fname%>" value="<%=m.id%>"/></center></td>
+<td><center><input type="checkbox" name="<%=m.lname%>" value="<%=m.id%>"/></center></td>
+</tr>
+<%end%>
+<center><input type="submit" submit="submit" value="Print Selected Addresses"></center>
+</form>
+</table>
+
+
+</body>
+</html>
+
+
