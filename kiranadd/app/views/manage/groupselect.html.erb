@@ -1,0 +1,9 @@
+<h2><i>Selecting members in Group</i></h2>
+
+<%=form_for :group,:url=>{:action=>"select_member"} do |f|%>
+
+<%=collection_select(:group,:glabel,Group.all,:id,:gname)%>
+
+<%=f.submit value="select"%>
+<%end%>
+

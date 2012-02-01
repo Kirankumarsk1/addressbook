@@ -1,0 +1,52 @@
+<script type="text/javascript">
+
+    
+   checked = false;
+      function checkedAll (frm1) {
+   var aa= document.getElementById('frm1');
+       if (checked == false)
+          {
+           checked = true
+          }
+        else
+          {
+          checked = false
+          }
+   for (var i =0; i < aa.elements.length; i++) 
+   {
+    aa.elements[i].checked = checked;
+   }
+      }
+
+
+
+</script>
+
+<i><h2>Add member to group </h2></i>
+
+<table border>
+<tr><td>Fist Name</td>
+<td>Last Name</td>
+<td>Home address</td>
+<td>Office Address</td>
+<td><form action='add' id='frm1' method='post'>
+Select All 
+<input type='checkbox' name='checkall' onclick='checkedAll();'></td>
+<%@meall.each do |i|%>
+<tr><td><%=i.fname%></td>
+<td><%=i.lname%></td>
+<td><%=i.haddressl1%><br>
+<%=i.haddressl2%><br>
+<%=i.haddressl3%><br>
+<%=i.hpincode%>
+</td>
+<td><%=i.oaddressl1%><br>
+<%=i.oaddressl2%><br>
+<%=i.oaddressl3%><br>
+<%=i.opincode%></td>
+<td><input type="checkbox" name="<%=i.id%>" value="<%=i.fname%>"/></td></tr>
+<%end%>
+<input type="submit" value="Add Selected members to group">
+</table>
+</form>
+
